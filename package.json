@@ -5,6 +5,10 @@
     "node": ">=6.0.0"
   },
   "description": "A system notifications and dock badge setter plugin for meteor-desktop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tzapu/meteor-desktop-system-notifications"
+  },
   "main": "dist/index.js",
   "scripts": {
     "test": "ava tests/functional/**/*.js -s",

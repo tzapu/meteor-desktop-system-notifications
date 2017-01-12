@@ -3,7 +3,7 @@ A plugin for [meteor-desktop](https://www.npmjs.com/package/meteor-desktop) that
 
 On the Meteor side you can do the following:
 
-- To set an badge on the app's icon
+- To set a badge on the app's icon
 ```
 Desktop.send('systemNotifications', 'setBadge', unreadCount);
 ```
@@ -15,7 +15,7 @@ Desktop.send('systemNotifications', 'notify', {
     text: 'Text',
     icon: 'Icon Url',
     data: {
-      someVar: 'someValue',
+        someVar: 'someValue',
     },
 });
 ```
