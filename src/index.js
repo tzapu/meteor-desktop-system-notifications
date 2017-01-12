@@ -56,7 +56,7 @@ export default class DesktopNotifier {
     this.registerApi();
 
     // Lets inform that the module has finished loading.
-    this.eventsBus.emit('meteor-desktop-system-notifications.loaded');
+    this.eventsBus.emit('systemNotifications.loaded');
   }
 
   registerApi() {
