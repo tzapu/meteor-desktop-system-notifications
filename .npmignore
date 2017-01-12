@@ -1,0 +1,14 @@
+src
+.idea
+tests
+dist/scripts
+*.js___jb_tmp___
+.babelrc
+.codeclimate.yml
+.editorconfig
+.eslintrc
+.gitignore
+.npmignore
+.travis.yml
+appveyor.yml
+circle.yml
