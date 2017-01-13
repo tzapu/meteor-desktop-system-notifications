@@ -18,7 +18,7 @@
     "build-watch": "babel src --watch --out-dir dist --source-maps inline --copy-files",
     "preversion": "git diff --exit-code && npm run build && npm run lint && npm test",
     "version": "node dist/scripts/propagateVersion.js && git add README.md",
-    "postversion": "npm run publish",
+    "postversion": "npm publish",
     "prepublish": "npm run build",
     "publish-plugins": "(cls || reset) && cd plugins/localstorage && (meteor publish || echo)",
     "publish-all": "npm run publish-plugins && npm publish"
