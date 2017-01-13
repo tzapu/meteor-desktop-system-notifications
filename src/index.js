@@ -2,7 +2,6 @@ import os from 'os';
 
 const { app, BrowserWindow, ipcMain } = require('electron');
 const notifier = require('electron-notifications');
-
 /**
  * Example module.
  *
@@ -61,6 +60,7 @@ export default class DesktopNotifier {
 
   registerApi() {
     ipcMain.on('notificationClicked', (event, data) => {
+      this.mainWindow.focus();
       this.module.send('notificationClicked', data);
     });
 
