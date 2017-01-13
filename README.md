@@ -5,6 +5,23 @@
 ---
 A plugin for [meteor-desktop](https://www.npmjs.com/package/meteor-desktop) that enabled native system notifications/toasts and icon badges.
 
+Supports native system notifications in macOS and Windows 10 and falls back to [electron-notifications](https://github.com/blainesch/electron-notifications) for other Windows 7 & 8.
+
+Did not test on Linux so any help is appreciated.
+
+###### macOS app icon badge
+![macOS Icon Badge](http://i.imgur.com/00ALvjK.png)
+###### macOS notification
+![macOS notification]()
+
+###### Windows app icon badge
+![Windows Icon Badge]()
+###### Windows 8 notification
+![Windows 8 notification]()
+###### Windows 10 notification
+![Windows 10 notification]()
+
+
 ### Usage
 
 In your `.desktop/settings.json` add this package to your plugins list:
