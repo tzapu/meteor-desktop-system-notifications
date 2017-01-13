@@ -45,7 +45,7 @@
     "spectron": "^3.4.0",
     "shelljs": "^0.7.4",
     "electron": "^1.4.4",
-    "meteor-desktop-test-suite": "0.0.16"
+    "meteor-desktop-test-suite": "0.1.0"
   },
   "bugs": {
     "url": "https://github.com/tzapu/meteor-desktop-system-notifications/issues"
