@@ -13,11 +13,11 @@
   "scripts": {
     "test": "ava tests/functional/**/*.js -s",
     "test-watch": "ava tests/functional/**/*.js --watch --source src --verbose -s",
-    "lint": "eslint src tests plugins",
+    "lint": "eslint src tests",
     "build": "babel src --out-dir dist --source-maps inline --copy-files",
     "build-watch": "babel src --watch --out-dir dist --source-maps inline --copy-files",
     "preversion": "git diff --exit-code && npm run build && npm run lint && npm test",
-    "version": "node dist/scripts/propagateVersion.js && git add plugins README.md",
+    "version": "node dist/scripts/propagateVersion.js && git add README.md",
     "postversion": "npm run publish",
     "prepublish": "npm run build",
     "publish-plugins": "(cls || reset) && cd plugins/localstorage && (meteor publish || echo)",

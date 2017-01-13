@@ -9,7 +9,8 @@
     "import"
   ],
   "parserOptions": {
-      "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 8 // or 2017
   },
   "globals": {
       "Meteor": true,

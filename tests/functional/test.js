@@ -12,29 +12,29 @@ import {
   fireEventsBusEvent,
   send,
   sendIpc,
-  sendIpcAndWaitForResponse,
+//  sendIpcAndWaitForResponse,
   emitWindowCreated,
 } from 'meteor-desktop-test-suite';
 
 async function getApp(t) {
-    const app = t.context.app;
-    await app.client.waitUntilWindowLoaded();
-    t.is(await app.client.getWindowCount(), 1);
-    return app;
+  const app = t.context.app;
+  await app.client.waitUntilWindowLoaded();
+  t.is(await app.client.getWindowCount(), 1);
+  return app;
 }
 
 function wait(ms) {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve(), ms);
-    });
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(), ms);
+  });
 }
 
 const appDir = path.join(__dirname, '..', '.testApp');
 
 test.before(
-    async () => {
-        await createTestApp(appDir, 'meteor-desktop-system-notifications');
-    }
+  async () => {
+    await createTestApp(appDir, 'meteor-desktop-system-notifications');
+  }
 );
 
 test.after(
@@ -42,38 +42,38 @@ test.after(
 );
 
 test.beforeEach(async (t) => {
-    t.context.app = new Application({
-        path: electron,
-        args: [appDir],
-        env: { ELECTRON_ENV: 'test' }
-    });
-    await t.context.app.start();
+  t.context.app = new Application({
+    path: electron,
+    args: [appDir],
+    env: { ELECTRON_ENV: 'test' },
+  });
+  await t.context.app.start();
 });
 
 test.afterEach.always(async (t) => {
-    try {
+  try {
         // Test app saves an error.txt file if it encounters an uncaught exception.
         // It is good to see it's contents if it is present.
-        const errorFile = path.join(appDir, 'error.txt');
-        console.log(
+    const errorFile = path.join(appDir, 'error.txt');
+    console.log(
             'error caught in the test app:',
             fs.readFileSync(errorFile, 'utf8')
         );
-        fs.unlinkSync(errorFile);
-    } catch (e) {
+    fs.unlinkSync(errorFile);
+  } catch (e) {
         // There is no error file so we are good ;)
-    }
-    if (t.context.app && t.context.app.isRunning()) {
-        await t.context.app.stop();
-    }
+  }
+  if (t.context.app && t.context.app.isRunning()) {
+    await t.context.app.stop();
+  }
 });
 
 test('the test app', async t => await getApp(t));
 
 test('if plugin confirms that it has loaded', async (t) => {
-    const app = await getApp(t);
-    await constructPlugin(app);
-    await fireEventsBusEventAndWaitForAnother(app, 'desktopLoaded', 'systemNotifications.loaded');
+  const app = await getApp(t);
+  await constructPlugin(app);
+  await fireEventsBusEventAndWaitForAnother(app, 'desktopLoaded', 'systemNotifications.loaded');
 });
 
 test('if new window is created', async (t) => {
@@ -109,15 +109,11 @@ test('if notify works', async (t) => {
       title: 'Title',
       text: 'Text',
       icon: 'https://crate.extracog.io/staging/images/images.png',
-      data
+      data,
     }
   );
   await wait(1000);
   await sendIpc(app, ['notificationClicked', data]);
   //await sendIpcAndWaitForResponse(app, 'notificationClicked', 'notificationClicked', [data]);
   await wait(1000);
-});
-
-test('wait', async (t) => {
-  await wait(5000);
 });
