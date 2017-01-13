@@ -3,3 +3,4 @@ node_modules
 dist
 *.js___jb_tmp___
 .versions
+npm-debug.log

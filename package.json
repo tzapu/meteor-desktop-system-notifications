@@ -1,6 +1,6 @@
 {
   "name": "meteor-desktop-system-notifications",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -16,10 +16,11 @@
     "lint": "eslint src tests plugins",
     "build": "babel src --out-dir dist --source-maps inline --copy-files",
     "build-watch": "babel src --watch --out-dir dist --source-maps inline --copy-files",
+    "preversion": "npm run build && npm run lint && npm test",
     "version": "node dist/scripts/propagateVersion.js && git add plugins README.md",
-    "postversion": "npm run publish-all",
+    "postversion": "npm run publish",
+    "prepublish": "npm run build",
     "publish-plugins": "(cls || reset) && cd plugins/localstorage && (meteor publish || echo)",
-    "prepublish": "npm run build || echo",
     "publish-all": "npm run publish-plugins && npm publish"
   },
   "keywords": [
@@ -40,7 +41,6 @@
     "babel-cli": "^6.18.0",
     "babel-preset-node6": "^11.0.0",
     "eslint": "^3.8.1",
-    "eslint-config-airbnb-base": "^9.0.0",
     "eslint-plugin-import": "^2.0.1",
     "spectron": "^3.4.0",
     "shelljs": "^0.7.4",
