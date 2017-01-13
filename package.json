@@ -16,7 +16,7 @@
     "lint": "eslint src tests plugins",
     "build": "babel src --out-dir dist --source-maps inline --copy-files",
     "build-watch": "babel src --watch --out-dir dist --source-maps inline --copy-files",
-    "preversion": "npm run build && npm run lint && npm test",
+    "preversion": "git diff --exit-code && npm run build && npm run lint && npm test",
     "version": "node dist/scripts/propagateVersion.js && git add plugins README.md",
     "postversion": "npm run publish",
     "prepublish": "npm run build",
