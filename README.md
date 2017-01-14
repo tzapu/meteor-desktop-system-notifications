@@ -12,7 +12,7 @@ Did not test on Linux so any help is appreciated.
 ###### macOS app icon badge
 ![macOS Icon Badge](http://i.imgur.com/00ALvjK.png)
 ###### macOS notification
-![macOS notification]()
+![macOS notification](http://i.imgur.com/muLnGE4.png)
 
 ###### Windows app icon badge
 ![Windows Icon Badge]()
@@ -20,6 +20,11 @@ Did not test on Linux so any help is appreciated.
 ![Windows 8 notification]()
 ###### Windows 10 notification
 ![Windows 10 notification]()
+
+###### Linux app icon badge
+Not tested
+###### Windows 8 notification
+Not tested
 
 
 ### Usage
