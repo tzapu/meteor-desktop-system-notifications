@@ -17,13 +17,13 @@ Did not test on Linux so any help is appreciated.
 ###### Windows app icon badge
 ![Windows Icon Badge](http://i.imgur.com/xTsBrFI.png)
 ###### Windows 8 notification
-![Windows 8 notification]()
+![Windows 8 notification](http://i.imgur.com/sEoCZW8.png)
 ###### Windows 10 notification
-![Windows 10 notification]()
+![Windows 10 notification](http://i.imgur.com/gxF9iNi.png)
 
 ###### Linux app icon badge
 Not tested
-###### Windows 8 notification
+###### Linux notification
 Not tested
 
 
