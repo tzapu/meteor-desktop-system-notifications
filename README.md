@@ -15,7 +15,7 @@ Did not test on Linux so any help is appreciated.
 ![macOS notification](http://i.imgur.com/muLnGE4.png)
 
 ###### Windows app icon badge
-![Windows Icon Badge]()
+![Windows Icon Badge](http://i.imgur.com/xTsBrFI.png)
 ###### Windows 8 notification
 ![Windows 8 notification]()
 ###### Windows 10 notification
